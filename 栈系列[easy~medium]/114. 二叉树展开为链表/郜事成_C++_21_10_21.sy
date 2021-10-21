@@ -1,0 +1,293 @@
+{
+	"ID": "20211021102711-mkg7x18",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20211021102711-mkg7x18",
+		"title": "114. 二叉树展开为链表",
+		"updated": "20211021104511"
+	},
+	"Children": [
+		{
+			"ID": "20211021102749-9jtroe6",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20211021102749-9jtroe6",
+				"updated": "20211021102843"
+			},
+			"Children": [
+				{
+					"Type": "NodeLink",
+					"Data": "span",
+					"Children": [
+						{
+							"Type": "NodeOpenBracket"
+						},
+						{
+							"Type": "NodeLinkText",
+							"Data": "114. 二叉树展开为链表"
+						},
+						{
+							"Type": "NodeCloseBracket"
+						},
+						{
+							"Type": "NodeOpenParen"
+						},
+						{
+							"Type": "NodeLinkDest",
+							"Data": "https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/"
+						},
+						{
+							"Type": "NodeCloseParen"
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "20211021102909-x4cln4a",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20211021102909-x4cln4a",
+				"updated": "20211021102925"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "难度 : medium"
+				}
+			]
+		},
+		{
+			"ID": "20211021102927-cijth5o",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20211021102927-cijth5o",
+				"updated": "20211021102927"
+			}
+		},
+		{
+			"ID": "20211021102927-t3hgqxl",
+			"Type": "NodeHeading",
+			"HeadingLevel": 3,
+			"Properties": {
+				"id": "20211021102927-t3hgqxl",
+				"updated": "20211021103026"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "思路："
+				}
+			]
+		},
+		{
+			"ID": "20211021103246-0nupsxh",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20211021103246-0nupsxh",
+				"updated": "20211021104511"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "\t使用一个类成员变量存储每次的上一个结点(lastNode)，在遍历二叉树过程中修改结点的指向，并且更新上一个结点(lastNode)，这样就能实现O(1)的空间复杂度。（好像递归也算空间复杂度，但是先不管了）。"
+				}
+			]
+		},
+		{
+			"ID": "20211021104244-0w4og30",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20211021104244-0w4og30",
+				"updated": "20211021104244"
+			}
+		},
+		{
+			"ID": "20211021103247-48xflej",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20211021103247-48xflej",
+				"updated": "20211021103247"
+			}
+		},
+		{
+			"ID": "20211021103247-ee9xly4",
+			"Type": "NodeHeading",
+			"HeadingLevel": 3,
+			"Properties": {
+				"id": "20211021103247-ee9xly4",
+				"updated": "20211021103254"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "源码："
+				}
+			]
+		},
+		{
+			"ID": "20211021103305-hrdpxks",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20211021103305-hrdpxks",
+				"updated": "20211021103343"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "class Solution {\npublic:\n    TreeNode* lastNode = new TreeNode(0);\n\n    void flatten(TreeNode* root) {\n        if(!root)\n            return;\n        lastNode-\u003eleft = nullptr;\n        lastNode-\u003eright = root;\n        lastNode = root;\n        TreeNode* oriRight = root-\u003eright;\n        flatten(root-\u003eleft);\n        flatten(oriRight);\n    }\n};\n\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		},
+		{
+			"ID": "20211021103346-fcez1bb",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20211021103346-fcez1bb",
+				"updated": "20211021104223"
+			}
+		},
+		{
+			"ID": "20211021104216-b2eevz5",
+			"Type": "NodeHeading",
+			"HeadingLevel": 3,
+			"Properties": {
+				"id": "20211021104216-b2eevz5",
+				"updated": "20211021104225"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "用例通过状况："
+				}
+			]
+		},
+		{
+			"ID": "20211021104435-98bud59",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20211021104435-98bud59",
+				"updated": "20211021104448"
+			},
+			"Children": [
+				{
+					"Type": "NodeStrong",
+					"Data": "strong",
+					"Children": [
+						{
+							"Type": "NodeStrongA6kOpenMarker",
+							"Data": "**"
+						},
+						{
+							"Type": "NodeText",
+							"Data": "执行用时：0 ms, 在所有 C++ 提交中击败了100.00%的用户"
+						},
+						{
+							"Type": "NodeStrongA6kCloseMarker",
+							"Data": "**"
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "20211021104435-yz79tfe",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20211021104435-yz79tfe",
+				"updated": "20211021104446"
+			},
+			"Children": [
+				{
+					"Type": "NodeStrong",
+					"Data": "strong",
+					"Children": [
+						{
+							"Type": "NodeStrongA6kOpenMarker",
+							"Data": "**"
+						},
+						{
+							"Type": "NodeText",
+							"Data": "内存消耗：12.4 MB, 在所有 C++ 提交中击败了52.20%的用户"
+						},
+						{
+							"Type": "NodeStrongA6kCloseMarker",
+							"Data": "**"
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "20211021104435-tpfrguy",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20211021104435-tpfrguy",
+				"updated": "20211021104444"
+			},
+			"Children": [
+				{
+					"Type": "NodeStrong",
+					"Data": "strong",
+					"Children": [
+						{
+							"Type": "NodeStrongA6kOpenMarker",
+							"Data": "**"
+						},
+						{
+							"Type": "NodeText",
+							"Data": "通过测试用例：225 / 225"
+						},
+						{
+							"Type": "NodeStrongA6kCloseMarker",
+							"Data": "**"
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "20211021104458-uwjc77n",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20211021104458-uwjc77n",
+				"updated": "20211021104458"
+			}
+		},
+		{
+			"ID": "20211021104216-x4vquds",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20211021104216-x4vquds",
+				"updated": "20211021104502"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "@time ： 2021/10/21  leetcode日常刷题——“栈”系列 "
+				}
+			]
+		},
+		{
+			"ID": "20211021102833-b33ws23",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20211021102833-b33ws23",
+				"updated": "20211021102833"
+			}
+		}
+	]
+}
